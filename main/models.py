@@ -24,8 +24,8 @@ class Task(models.Model):
     deadline = models.DateField()
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='tasks_img/')
-    tags = models.ManyToManyField(Tag)
+    image = models.ImageField(upload_to='tasks_img/', blank=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     
     def __str__(self):
         return self.title
